@@ -8,10 +8,10 @@
 #
 # See the LICENSE file in the source distribution for further information.
 
-from sos.report.plugins import Plugin, RedHatPlugin, DebianPlugin, SoSPredicate
+from sos.report.plugins import Plugin, RedHatPlugin, DebianPlugin, SoSPredicate, ArchPlugin
 
 
-class Ipvs(Plugin, RedHatPlugin, DebianPlugin):
+class Ipvs(Plugin, RedHatPlugin, DebianPlugin, ArchPlugin):
 
     short_desc = 'Linux IP virtual server'
 

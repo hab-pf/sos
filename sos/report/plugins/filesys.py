@@ -7,10 +7,10 @@
 # See the LICENSE file in the source distribution for further information.
 
 from sos.report.plugins import (Plugin, RedHatPlugin, DebianPlugin,
-                                UbuntuPlugin, CosPlugin, PluginOpt)
+                                UbuntuPlugin, CosPlugin, PluginOpt, ArchPlugin)
 
 
-class Filesys(Plugin, DebianPlugin, UbuntuPlugin, CosPlugin):
+class Filesys(Plugin, DebianPlugin, UbuntuPlugin, CosPlugin, ArchPlugin):
 
     short_desc = 'Local file systems'
 

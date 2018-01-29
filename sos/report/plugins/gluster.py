@@ -10,10 +10,10 @@ import time
 import os
 import glob
 import string
-from sos.report.plugins import Plugin, RedHatPlugin, PluginOpt
+from sos.report.plugins import Plugin, RedHatPlugin, PluginOpt, ArchPlugin
 
 
-class Gluster(Plugin, RedHatPlugin):
+class Gluster(Plugin, RedHatPlugin, ArchPlugin):
 
     short_desc = 'GlusterFS storage'
 

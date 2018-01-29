@@ -9,11 +9,11 @@
 #
 # See the LICENSE file in the source distribution for further information.
 
-from sos.report.plugins import Plugin, RedHatPlugin
+from sos.report.plugins import Plugin, RedHatPlugin, ArchPlugin
 from glob import glob
 
 
-class Monit(Plugin, RedHatPlugin):
+class Monit(Plugin, RedHatPlugin, ArchPlugin):
 
     short_desc = 'Monit monitoring daemon'
     packages = ('monit',)

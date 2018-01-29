@@ -9,10 +9,10 @@
 #
 # See the LICENSE file in the source distribution for further information.
 
-from sos.report.plugins import Plugin, SCLPlugin
+from sos.report.plugins import Plugin, SCLPlugin, ArchPlugin
 
 
-class Redis(Plugin, SCLPlugin):
+class Redis(Plugin, SCLPlugin, ArchPlugin):
 
     short_desc = 'Redis, in-memory data structure store'
 
