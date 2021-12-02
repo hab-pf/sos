@@ -6,8 +6,9 @@
 #
 # See the LICENSE file in the source distribution for further information.
 
-from sos.policies import PackageManager, LinuxPolicy
-from sos.plugins import ArchPlugin
+from sos.policies.distros import LinuxPolicy
+from sos.policies import PackageManager
+from sos.report.plugins import IndependentPlugin, ArchPlugin
 from sos.utilities import shell_out
 
 
@@ -17,16 +18,14 @@ class ArchPolicy(LinuxPolicy):
     vendor = "Arch Linux"
     vendor_url = "https://www.archlinux.org/"
     vendor_text = ""
-    # package_manager = PackageManager(
-    #   "pacman --query | awk 'BEGIN {OFS = \"|\"} {print $1,$2}'")
-    valid_subclasses = [ArchPlugin]
 
-    def __init__(self, sysroot=None):
-        super(ArchPolicy, self).__init__(sysroot=sysroot)
+    def __init__(self, *, remote_exec=None, **kw):
+        super(ArchPolicy, self).__init__(**kw)
         self.package_manager = Pacman()
+        self.valid_subclasses += [ArchPlugin]
 
     @classmethod
-    def check(cls):
+    def check(cls, remote=''):
         """This method checks to see if we are running on Arch.
             It returns True or False."""
         try:

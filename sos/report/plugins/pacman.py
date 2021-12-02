@@ -12,12 +12,12 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-from sos.plugins import Plugin, ArchPlugin
+from sos.report.plugins import Plugin, ArchPlugin
 
 
 class Pacman(Plugin, ArchPlugin):
-    """ Pacman specific information
-    """
+
+    short_desc = "Pacman specific information"
 
     plugin_name = 'pacman'
     profiles = ('system', 'sysmgmt', 'packagemanager')

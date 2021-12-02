@@ -126,7 +126,8 @@ any third party.
         self.sysroot = sysroot
         self.register_presets(GENERIC_PRESETS)
 
-    def check(self, remote=''):
+    @classmethod
+    def check(cls, remote=''):
         """
         This function is responsible for determining if the underlying system
         is supported by this policy.
@@ -559,7 +560,7 @@ class GenericPolicy(Policy):
     should allow for IndependentPlugins to be executed on any system"""
 
     def get_msg(self):
-        return self.msg % {'distro': self.system}
+        raise NotImplementedError("not actually usable")
 
 
 # vim: set et ts=4 sw=4 :
